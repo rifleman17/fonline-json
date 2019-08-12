@@ -1,3 +1,4 @@
+// FOS Common
 //    A test of various json.fos functions. Use ASCompiler to run it:
 //
 //    ASCompiler poems.fos -run tmain
@@ -8,17 +9,16 @@
 //
 //    ASCompiler poems.fos -d _JSON_REV_PRE400 -run tmain
 
-#include "../src/json.fos"
 
-void tmain()
+void ModuleInit()
 {
-    JSON@ poems = JSONLoad("poems.json");
+    json::JSON@ poems = json::JSONLoad("poems.json");
     poems[0]["title"] << "This poem title got hacked!";
     _JSON_ForEach(poems, @WritePoem);
     poems.save("tested_poems.json");
 }
 
-void WritePoem(JSON@ poem, uint index)
+void WritePoem(json::JSON@ poem, uint index)
 {
     string title = "No title";
     bool isSong = false;
@@ -45,7 +45,7 @@ void WritePoem(JSON@ poem, uint index)
     _JSON_ForEach(poem["text"], @WritePoemLine);
 }
 
-void WritePoemLine(JSON@ text, uint index)
+void WritePoemLine(json::JSON@ text, uint index)
 {
     string line = "";
     text >> line;

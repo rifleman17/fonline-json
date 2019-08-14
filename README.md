@@ -6,6 +6,8 @@ FOnline-JSON is a module allowing you to load, save and work with JSON files in 
 The documentation of the module is available in the [project's wiki](https://github.com/rotators/fonline-json/wiki).
 
 The module is released under the terms of CC0, which means you can do anything with it. You are not required to give any attribution. For more details see [LICENSE](https://github.com/rotators/fonline-json/blob/master/LICENSE) file.
+### r17
+SDK 840 revision compatible
 
 ### About JSON
 
